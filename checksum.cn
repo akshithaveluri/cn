@@ -20,8 +20,8 @@ printf("SUM IS:%d",sum);
 sum=sum+sch;
 checksum=~sum; //1's complement of sum
 printf("\nCHECKSUM IS:%d",checksum);
-} v
-oid main()
+}
+void main()
 {
 int n,sch,rch;
 printf("\nENTER SIZE OF THE STRING:");
