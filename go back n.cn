@@ -21,8 +21,8 @@ if(lost_frame>=sent && lost_frame <sent+window_size
 printf("Receiver:Frame %d lost! Go back and resend from
 %d\n\n",lost_frame,lost_frame);
 sent=lost_frame;
-} e
-lse
+}
+else
 {
 int ack=sent +window_size;
 if(ack>total_frames)
@@ -30,10 +30,10 @@ ack=total_frames;
 printf("Receiver:Acknowledged up to frame %d\n\n",ack-1);
 sent=ack;
 }
-} p
-rintf("All frames sent successfully using GO-BACK-N!\n");
-} O
-UTPUT:
+}
+printf("All frames sent successfully using GO-BACK-N!\n");
+}
+OUTPUT:
 Enter total number of frames to send:8
 Enter window size:3
 --- GO-Back-N sliding window protocol simulation---
