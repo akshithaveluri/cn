@@ -20,8 +20,8 @@ for(i=sent;i<sent+windowSize && i<totalFrames;i++)
 {
 if(frameStatus[i]==0)
 printf("Frame %d sent.\n",i);
-} fo
-r(i=sent;i<sent+windowSize && i<totalFrames;i++)
+}
+for(i=sent;i<sent+windowSize && i<totalFrames;i++)
 {
 if(frameStatus[i]==0)
 {
@@ -31,12 +31,12 @@ if(choice == 1)
 {
 printf("ACK for frame %d received.\n",i);
 frameStatus[i]=1;
-} e
-lse
+}
+else
 printf("Frame %d lost / not acknowledge.\n",i);
 }
-} p
-rintf("\n DO you want to resend any lost frame?(Enter frame number,-1 to
+}
+printf("\n DO you want to resend any lost frame?(Enter frame number,-1 to
 stop):"); scanf("%d",&resend);
 while(resend!=-1)
 {
@@ -44,15 +44,14 @@ if(resend>=sent && resend<totalFrames &&
 frameStatus[resend]==0) {
 printf("Resending frame %d...\n",resend);
 printf("ACK for frame %d received now.\n",resend);frameStatus[resend]=1;
-} e
-lse
+}
+else
 printf("Invalid frame number or already ACKed.\n");
 printf("Enter next frame to resend (-1 to stop):");
 scanf("%d",&resend);
-} w
-hile(sent<totalFrames && frameStatus[sent]==1)
+}
+while(sent<totalFrames && frameStatus[sent]==1)
 sent++;
-} p
-rintf("\nAll frames sent and acknowledged
+}
+printf("\nAll frames sent and acknowledged
 successfully!\n"); }
-O
